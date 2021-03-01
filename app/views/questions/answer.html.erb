@@ -1,0 +1,19 @@
+<h1>Stupid coaching</h1>
+<div class="answers">
+<p><%= @your_message %></p>
+<p>- you</p>
+</div>
+<div class="answers">
+<% if @your_message.downcase == "i am going to work right now!" %>
+  <p><%= "" %></p>
+  <p>- Coach</p>
+<% elsif @your_message.end_with? "?" %>
+  <p><%= "Silly question, get dressed and go to work!" %></p>
+    <p>- Coach</p>
+<% else %>
+  <p><%= "I don't care, get dressed and go to work!" %></p>
+    <p>- Coach</p>
+<% end %>
+</div>
+
+<%= link_to 'Ask a new question', ask_path %>
